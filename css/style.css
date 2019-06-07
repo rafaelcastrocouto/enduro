@@ -1,0 +1,174 @@
+body {
+  overflow: hidden;
+  background: #111;
+  font-family: "Lato", "Lucida Grande","Lucida Sans Unicode", Tahoma, Sans-Serif;
+}
+h1 {
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+p {
+  color: white;
+  text-align: center;
+}
+#game {
+  width: 320px; height: 240px;
+  position: relative;
+  margin: 50px auto;  
+  perspective: 100px;
+  overflow: hidden;
+  transform: scale(1.3);
+  cursor: pointer;
+}
+#game > * {
+  position: absolute;   
+  width: 100%;
+}
+#sky {
+  height: 66px;
+  background: #228;
+}
+#mountains {
+  width: 960px; height: 0;
+  top: 65px; left: -320px;
+}
+.mountain { 
+  float: left;
+  width: 5px;
+  position: relative; top: -16px;
+  border: 40px solid transparent;
+  border-bottom: 10px solid #882;
+  border-top: 0;
+  margin-right: 280px;
+}
+.mountain:after {
+  content: "";
+  float: left;
+  width: 5px;
+  position: relative; top: 10px;
+  border: 25px solid transparent;
+  border-bottom: 6px solid #882;
+  border-top: 0;
+}
+.mountain:nth-child(2) {
+  transform: scaleX(-1);
+  margin-right: 80px;
+}
+.mountain:nth-child(3) {
+  margin-right: 240px;
+}
+.mountain:nth-child(3):after {
+  left: 20px;
+}
+.mountain:last-child {  
+  margin-right: 0;
+}
+#terrain {
+  top: 65px;
+  height: 120px;
+  background: #040;
+}
+#fog {
+  width: 200%; height: 80px;
+  top: 0; left: -50%;
+  background: rgba(200,200,200,0.7);
+  box-shadow: 0 45px 45px rgba(200,200,200,0.7);
+}
+#road {
+  width: 320px; height: 120px;
+  top: 65px;
+}
+#cars {
+  width: 320px; height: 6000px;
+  bottom: 55px;
+  transform-origin: 50% 100%;
+  transform: rotateX(57deg);  
+  transform-style: preserve-3d;
+}
+#cars.night .car {
+  background: transparent !IMPORTANT;
+}
+.car {
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 45px;
+  height: 15px;
+  background-color: #eee;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAALCAYAAABCm8wlAAAAKklEQVR42mNgcGL4zwACMBqZDaaRJdABcQpgDJKtQBHHq2gwmYDuTSgfAGaGIx0p42fzAAAAAElFTkSuQmCC');
+  background-size: 100% 100%;
+  image-rendering: pixelated;
+}
+.night .car:before {
+  width: 8px; height: 3px;
+  content: "";
+  display: block;
+  background: 'red';
+  position: absolute; top: 6px; left: 8px;
+}
+.night .car:after {
+  width: 8px; height: 3px;
+  content: "";
+  display: block;
+  background: #f55;
+  position: absolute; top: 7px; left: 29px;
+}
+#car.player {
+  width: 45px;
+  left: calc(50% - 20px);
+  bottom: 55px;
+}
+#ui {
+  top: 185px;
+  padding: 5px;
+  background: #000;
+}
+#panel {
+  width: 120px;
+  height: 35px;
+  margin: 0 auto;
+  background: #922;
+  padding: 5px 20px;
+  font-family: monospace;
+  font-size: 13px;
+  font-weight: bold;
+}
+#panel div {
+  float: left;
+  background: #c95;
+  height: 15px;  
+  color: #000;
+  overflow: hidden;
+}
+#panel a {
+  position: relative;
+  padding: 0 2.5px;
+  float: left;
+  width: 10px; height: 15px;
+  text-align: center;
+  transform: scaleX(1.4);
+  transform-origin: 0 0;
+  margin-right: 5px;
+}
+#km {
+  width: 120px;
+  margin-bottom: 5px;  
+}
+
+#km a:last-child {
+  background: #000;
+  color: #c95;
+}
+#lap {
+  width: 20px;
+  margin-right: 20px;
+}
+#position {
+  width: 80px;
+}
+#position a:first-child {
+  float: left;
+}
+.hidden {
+  display: none;
+}
